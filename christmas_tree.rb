@@ -1,6 +1,9 @@
-puts "Hello! This little program helps you grow a christmas tree of a size of your choosing!"
-puts "Please enter a number below that is even and greater or equal to the number 4."
-num = gets.chomp
+def intro
+	puts "Hello! This little program helps you grow a christmas tree of a size of your choosing!"
+	puts "Please enter a number below that is even and greater or equal to the number 4."
+	@num = gets.chomp
+	print_tree @num.to_i
+end
 def print_tree height
 	if height >= 4 && height % 2 == 0 && height <= 90
 		height.times do |i|
@@ -17,6 +20,9 @@ def print_tree height
 		  	puts "*"
 			end
 		end
+	else
+    puts "The number you entered was not valid"
+    intro
 	end
 end
-print_tree num.to_i
+intro
